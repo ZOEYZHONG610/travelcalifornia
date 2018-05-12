@@ -1,0 +1,594 @@
+<html>
+    <head>
+        
+        <title>Travel California</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        <link href="https://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css" rel="stylesheet">
+
+
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+            <script>
+              // Initialize Firebase
+              var config = {
+                apiKey: "AIzaSyABrXbSnaLtoX9CmBgXB_knV1-3rny4rdI",
+                authDomain: "travelcalifornia-2018.firebaseapp.com",
+                databaseURL: "https://travelcalifornia-2018.firebaseio.com",
+                projectId: "travelcalifornia-2018",
+                storageBucket: "travelcalifornia-2018.appspot.com",
+                messagingSenderId: "264541114150"
+              };
+              firebase.initializeApp(config);
+            </script>
+       
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+        <script
+        src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
+        <script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="js/functions.js"></script>
+
+
+        
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link href="css/styles.css" rel="stylesheet">
+
+    </head>
+    <body>
+        
+        <!-- page 1 -->
+                <div data-role="page" id="foo">
+                <div data-role="panel" id="myPanel" data-position="left">
+                        <h2>Travel California</h2>
+                                <div>
+                                        <ul class="navbar-nav ">
+                                            <li class="nav-item active">
+                                                <a class="nav-link" href="#">Home (current)</a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Popular Tours
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="#">7 Days Highway 1</a>
+                                                <a class="dropdown-item" href="#">National Park</a>
+                                                <a class="dropdown-item" href="#">2 Days San Francisco city tour</a>
+                                                </div>
+                                            </li>
+                                          
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Customize Tour</a>
+                                            </li>
+                                            
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Travel News</a>
+                                            </li>
+                                          
+                                        </ul>
+                                          
+                                </div>
+                        
+                    </div>
+            <div data-role="header">
+            
+                <a href="#myPanel" class="ui-btn ui-icon-home ui-btn-icon-left">Menu</a>
+                <h1>Travel California</h1>
+                <a href="#login" class="ui-btn ui-icon-user ui-btn-icon-left" data-transition="pop">Login</a>
+                
+            
+            
+            </div>
+            
+            <div data-role="main" class="ui-content">
+
+                   
+                            
+            
+                <p>
+                    Welcome to Travel California hompage! Please start now!</p>
+                
+                
+                    <ul class="searchsection">
+                            <!-- <li>From: <input type="text" id="datepicker1"> 
+                            
+                            </li>
+                            
+                            <li>To: <input type="text" id="datepicker2">
+                            
+                            </li> -->
+                    </ul>
+
+
+                <button class="btn btn-info btn-block">
+                    <a href="#bar" data-transition="slide"> Find a Tour</a>
+                </button>
+            
+                
+
+            </div>
+            
+                    <div data-role="footer" class="footer">
+            
+                        <p>Copyright © 2018 - Travel California Inc.</p>
+                    
+                    </div>
+        
+        
+        
+        </div> 
+
+        <!--        page 2-->
+        
+        <div data-role="page" id="bar">
+                 
+            <div data-role="panel" id="myPanel" data-position="left">
+                <h2>Travel California</h2>
+                <p>
+                        <div>
+                                <ul class="navbar-nav ">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Popular Tours
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="#">7 Days Highway 1</a>
+                                        <a class="dropdown-item" href="#">National Park</a>
+                                        <a class="dropdown-item" href="#">2 Days San Francisco city tour</a>
+                                        </div>
+                                    </li>
+                                  
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Customize Tour</a>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Travel News</a>
+                                    </li>
+                                  
+                                </ul>
+                                  
+                        </div>
+
+                </p>
+                
+            </div>
+                
+           
+            <div data-role="header">
+           
+               <a href="#foo" class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+               <h1><a href="#myPanel">Tours</a></h1>
+               <a href="#login" class="ui-btn ui-icon-user ui-btn-icon-left"data-transition="pop">Login</a>
+               
+           
+           
+            </div>
+           
+           <div data-role="main" class="ui-content">
+                
+                <div data-role="navbar">
+                        <ul>
+                            <li><a href="#bar" class="ui-btn-active">By District</a></li>
+                            <li><a href="#city">By City</a></li>
+                            
+                        </ul>
+        
+                </div>
+           
+                <div class="container">
+                        <div class="row">
+                            
+                            <button class="btn btn-default filter-button col-lg-2 col-md-2 col-sm-12 col-xs-12" data-filter="all">All</button>
+                            
+                            <button class="btn btn-default filter-button col-lg-2 col-md-2 col-sm-12 col-xs-12" data-filter="SC">South California</button>
+                            <button class="btn btn-default filter-button col-lg-2 col-md-2 col-sm-12 col-xs-12" data-filter="NC">North California </button>
+                            <button class="btn btn-default filter-button col-lg-2 col-md-2 col-sm-12 col-xs-12" data-filter="NP">National Park</button>
+                            <button class="btn btn-default filter-button col-lg-2 col-md-2 col-sm-12 col-xs-12" data-filter="OT">Others</button>
+                        
+                        </div>
+                        <br>
+                        
+                        <div class="row">
+                        
+
+
+
+                            <div class="gallery_product col-lg-4 col-md-4 col-sm-12 col-xs-12 filter SC" id="tourname1">
+                                
+                                <a href="#la" id="loader">
+                                <img src="picture/la-1%20(1).jpg" class="img-responsive">
+                                <li class="tourname" >Los Angeles 5 days Tour </li>
+                                </a>
+                                <div id="datastage"></div>
+                                
+                            </div>
+
+                            <!-- <div name="comment" id="datastage">
+                           
+                            
+                                    <input type="button" id="loader" value="Load data">
+                            </div> -->
+
+
+                            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-12 filter NC" id="tourname2">
+                                <a href="#" id="loader2">
+                                <img src="picture/tmg-article_default_mobile.jpg" class="img-responsive">
+                                <li class="tourname" >Half Moon Bay 3 days RV Trip </li>
+                                </a>
+                                <div id="datastage2"></div>
+                            </div>
+
+                            <div class="gallery_product col-lg-4 col-md-4 col-sm-12 col-xs-12 filter NP" id="tourname3">
+                                <img src="picture/yellowstone_park.jpg" class="img-responsive">
+                                <li class="tourname" >Yellow Stone National Park Camping trip </li>
+                            </div>
+
+                            <div class="gallery_product col-lg-4 col-md-4 col-sm-12 col-xs-12 filter OT" id="tourname4">
+                                <img src="picture/LV.jpg" class="img-responsive">
+                                <li class="tourname" >Las Vegas Casino Explore </li>
+                            </div>
+
+
+                        </div>
+                        <button><a href="#login">Book</a></button>
+                    </div>
+           
+           
+           </div>
+           
+                <div data-role="footer" class="footer">
+            
+                <p>Copyright © 2018 - Travel California Inc.</p>
+                
+                </div>
+       
+        </div>
+
+
+
+ <!-- City page        -->
+
+ <div data-role="page" id="city">
+                 
+        <div data-role="panel" id="myPanel" data-position="left">
+            <h2>Travel California</h2>
+            <p>
+                    <div>
+                            <ul class="navbar-nav ">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Popular Tours
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">7 Days Highway 1</a>
+                                    <a class="dropdown-item" href="#">National Park</a>
+                                    <a class="dropdown-item" href="#">2 Days San Francisco city tour</a>
+                                    </div>
+                                </li>
+                              
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Customize Tour</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Travel News</a>
+                                </li>
+                              
+                            </ul>
+                              
+                    </div>
+
+            </p>
+            
+        </div>
+            
+       
+        <div data-role="header">
+       
+           <a href="#foo" class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+           <h1><a href="#myPanel">Tours</a></h1>
+           <a href="#login" class="ui-btn ui-icon-user ui-btn-icon-left"data-transition="pop">Login</a>
+           
+       
+       
+        </div>
+       
+       <div data-role="main" class="ui-content">
+            
+            <div data-role="navbar">
+                    <ul>
+                        <li><a href="#bar" >By District</a></li>
+                        <li><a href="#city" class="ui-btn-active"  >By City</a></li>
+                        
+                    </ul>
+    
+            </div>
+       
+            <div data-role="main" class="ui-content">
+                
+                    <ul data-role="listview" data-inset="true" data-autodividers="true" data-filter="true">
+                    <li><a href="#">Los Angeles</a></li>
+                    <li><a href="#">Las Vegas</a></li>
+                    <li><a href="#">San Deigo</a></li>
+                    <li><a href="#">Santa Monica</a></li>
+                    <li><a href="#">Santa Cruz</a></li>
+                    <li><a href="#">Santa Barbara</a></li>
+                    <li><a href="#">San Francisco</a></li>
+                    <li><a href="#">San Jose</a></li>
+                        
+                        
+                    </ul>
+                
+                
+                </div>
+       
+       
+       </div>
+       
+            <div data-role="footer" class="footer">
+            
+            <p>Copyright © 2018 - Travel California Inc.</p>
+            
+            </div>
+   
+    </div>
+
+<!-- Page login page -->
+
+        <div data-role="page" id="login">
+                <div data-role="panel" id="myPanel" data-position="left">
+                        <h2>Travel California</h2>
+                        <p>
+                                <div>
+                                        <ul class="navbar-nav ">
+                                        <div data-role="list">
+                                            <li class="nav-item active">
+                                                
+                                                <a class="nav-link" href="#foo">Home</a>
+
+                                            </li>
+                                        </div>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Popular Tours
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="#">7 Days Highway 1</a>
+                                                <a class="dropdown-item" href="#">National Park</a>
+                                                <a class="dropdown-item" href="#">2 Days San Francisco city tour</a>
+                                                </div>
+                                            </li>
+                                          
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Customize Tour</a>
+                                            </li>
+                                            
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Travel News</a>
+                                            </li>
+                                          
+                                        </ul>
+                                          
+                                </div>
+        
+                        </p>
+                        
+                    </div>
+            <div data-role="header">
+            
+                <a href="#bar" class="ui-btn ui-icon-back ui-btn-icon-left " data-transition="slide">Back</a>
+                <h1>Log in | Sign up</h1>
+                
+                
+            
+            
+            </div>
+            
+            <div data-role="main" class="ui-content">
+            
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-4 col-md-offset-4 col-sm-0"></div>
+                            <div class="col-md-4 col-md-offset-4 col-sm-12">
+                                <div role="form" id="signupform">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" id="form-email" class="form-control" placeholder="Enter Email Address">
+                                
+                                    </div>
+                                
+                                    <div class="form-group align:center">
+                                        <label>Password</label>
+                                        <input type="password" id="form-password" class="form-control"
+                                               placeholder="Enter Password">
+                                        
+                                    </div> 
+                                        <input type="submit" id="signup" class="btn btn-primary" value="Sign Up" onclick="handleSignUp();">
+                                        <input type="submit" id="signin" class="btn btn-primary"value="Sign In" onclick="handleSignIn();">
+                                        <input type="submit" id="signout" class="btn btn-primary"value="Sign Out" onclick="handleSignOut();">
+                                        <input type="submit" id="signfacebook" class="btn btn-primary"value="Facebook Login" onclick="handleFBLogin();">
+                                        <button><a href="#book">Book as guest</a></button>
+                                    
+                                </div>
+                   
+                            </div>
+                            <div class="col-md-4 col-md-offset-4 col-sm-0"></div>
+                        </div>
+                    
+                        </div>
+            
+            
+            </div>
+
+            
+            <div data-role="footer" class="footer">
+            
+            <p>Copyright © 2018 - Travel California Inc.</p>
+            
+            </div>
+        
+        
+        
+        </div> 
+
+
+        <!-- tour detail page -->
+               <div data-role="page" id="book">
+                    <div data-role="panel" id="myPanel" data-position="left">
+                            <h2>Travel California</h2>
+                                    <div>
+                                            <ul class="navbar-nav ">
+                                                <li class="nav-item active">
+                                                    <a class="nav-link" href="#">Home (current)</a>
+                                                </li>
+                                                <li class="nav-item dropdown">
+                                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Popular Tours
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                    <a class="dropdown-item" href="#">7 Days Highway 1</a>
+                                                    <a class="dropdown-item" href="#">National Park</a>
+                                                    <a class="dropdown-item" href="#">2 Days San Francisco city tour</a>
+                                                    </div>
+                                                </li>
+                                              
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Customize Tour</a>
+                                                </li>
+                                                
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Travel News</a>
+                                                </li>
+                                              
+                                            </ul>
+                                              
+                                    </div>
+                            
+                        </div>
+                <div data-role="header">
+                
+                    <a href="#myPanel" class="ui-btn ui-icon-home ui-btn-icon-left">Menu</a>
+                    <h1>Travel California</h1>
+                    <a href="#login" class="ui-btn ui-icon-user ui-btn-icon-left" data-transition="pop">Login</a>
+                    
+                
+                
+                </div>
+
+                
+                <div data-role="main" class="ui-content">
+    
+                        
+                        <form name="myform">
+    
+                                <div>
+                                        <!-- <input type="button" id="loader" value="Display trip details">
+                                        <div id="datastage"></div> -->
+                                 
+                                <li for="autocomplete-1">
+                                     Choose a tour
+                                    <input type="text"  id="autocomplete-1" placeholder="Type tour name" name="plan">
+                                </li>
+                           
+                                <label>From</label>
+
+                                
+                                <input type="text"
+                                       name="subject1"
+                                       placeholder="mm/dd/yyyy"
+                                       id="datepicker1">
+                                <label>to</label>
+                                <input type="text"
+                                       name="subject2"
+                                       placeholder="mm/dd/yyyy"
+                                       id="datepicker2">
+                                <label>Adult</label>
+                                <input type="text"
+                                       name="amount"
+                                       placeholder="0"
+                                       >
+                                <label>Child</label>
+                                       <input type="text"
+                                              name="amount2"
+                                              placeholder="0"
+                                              >
+
+                                <label>First name</label>
+                                        <input type="text"
+                                        name="firstname"
+                                        placeholder="Zoey"
+                                                    >
+                                <label>Last name</label>
+                                        <input type="text"
+                                               name="lastname"
+                                               placeholder="Zhong"
+                                                            >
+                                <label>Phone number</label>
+                                                            <input type="text"
+                                                                   name="number"
+                                                                   placeholder="123-456-7890"
+                                                                                >
+                                </div>
+                                <div>
+                                        
+                               
+                                </div>
+                                <input type="button"
+                                       onclick="submitForm()"
+                                       name="submit"
+                                       value="Book"
+                                      >
+                        
+                            
+                            
+                        </form>
+                </div>
+                
+                        <div data-role="footer" class="footer">
+                
+                            <p>Copyright © 2018 - Travel California Inc.</p>
+                        
+                        </div>
+            
+            
+            
+            </div>
+
+
+
+
+
+        
+            
+        
+        
+        
+        
+        
+
+    </body>
+</html>
